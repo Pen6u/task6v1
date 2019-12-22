@@ -5,7 +5,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-int** MatrixCreation(int rows, int columns);
+void MatrixCreation(int**& matrix, int rows, int columns);
 void Input(int** matrix, int rows, int columns);
 int IincreasingRows(int** matrix, int rows);
 
@@ -16,19 +16,19 @@ int main() {
 	cout << "Введите размерность: ";
 	cin >> rows;
 	columns = rows;
-	int** matrix = MatrixCreation(rows, columns);
+	int** matrix;
+	MatrixCreation(matrix, rows, columns);
 	Input(matrix, rows, columns);
 	cout << "Колличество отортированных строк: " << IincreasingRows(matrix, rows) << endl;
 	system("PAUSE");
 	return 0;
 }
 
-int** MatrixCreation(int rows, int columns) {
-	int** matrix = new int* [rows];
+void MatrixCreation(int**& matrix, int rows, int columns) {
+	matrix = new int* [rows];
 	for (int i = 0; i < rows; i++) {
 		matrix[i] = new int[columns];
 	}
-	return matrix;
 }
 
 void Input(int** matrix, int rows, int columns) {
