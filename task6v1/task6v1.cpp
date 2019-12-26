@@ -42,7 +42,6 @@ void Input(int**& matrix, int rows, int columns) {
 
 int IincreasingRows(int** matrix, int rows) {
 	int amount = 0;
-	//int count = 0;
 	for (int i = 0; i < rows; i++) {
 		int j;	
 		for (j = 0; j < rows-1; j++) {
